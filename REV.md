@@ -8,12 +8,19 @@ REVLib should be available in the vendor dependencies of WPILib VS Code, but you
 https://software-metadata.revrobotics.com/REVLib-2027.json
 ```
 
-[Offline Installer](https://github.com/REVrobotics/REV-Software-Binaries/releases/download/revlib-2027.0.0-alpha-2/REVLib-offline-v2027.0.0-alpha-2.zip)
+[Offline Install](https://github.com/REVrobotics/REV-Software-Binaries/releases/download/revlib-2027.0.0-alpha-3/REVLib-offline-v2027.0.0-alpha-3.zip)
 
 Refer to [WPILib Docs](https://docs.wpilib.org/en/stable/docs/software/vscode-overview/3rd-party-libraries.html) about installing 3rd party libraries.
 
 <details>
 <summary>Changelog</summary>
+
+### REVLib v2027.0.0-alpha-3
+
+- [A301] Adds setRelativeEncoderPosition()
+- [A301] Fixes setInverted() and getInverted()
+- [ServoHub] Fixes internal crash when calling Status getters
+- [A301] Renames getOutputCurrent() to getMotorCurrent()
 
 ### REVLib v2027.0.0-alpha-2
 
@@ -29,9 +36,9 @@ Refer to [WPILib Docs](https://docs.wpilib.org/en/stable/docs/software/vscode-ov
 
 ## Hardware Client 2
 
-[RHC2 for Desktop](https://storage.googleapis.com/revui-alpha/download-site/download.html)
+[RHC2 for Desktop](https://alpha.rhc2.revrobotics.com/download-site/download.html)
 
-[RHC2 IPK for Systemcore](https://storage.googleapis.com/revui-alpha/download-site/debian/rev-robotics-rev-hardware-client-alpha_1.1.0_arm64.ipk) - Install this by clicking "Add Package" on the home screen of Systemcore and selecting this file. It will take a minute or so to start up.
+[RHC2 IPK for Systemcore](https://alpha.rhc2.revrobotics.com/download-site/debian/rev-robotics-rev-hardware-client-alpha_1.1.0_arm64.ipk) - Install this by clicking "Add Package" on the home screen of Systemcore and selecting this file. It will take a minute or so to start up.
 
 <details>
 <summary>Changelog</summary>
@@ -51,7 +58,33 @@ Refer to [WPILib Docs](https://docs.wpilib.org/en/stable/docs/software/vscode-ov
 
 ## Firmware
 
-[A301 v2027.0.0-prerelease.11](https://github.com/REVrobotics/REV-Software-Binaries/releases/download/a301-27.0.0-prerelease.11/a301_27_0_0_prerelease_11.dfu) - Or add the code `a301-alpha` in the Downloads tab of RHC2
+### A301
+
+To get the latest version of A301 firmware in RHC2, add the code `a301-alpha` in the Downloads tab.
+
+Direct firmware downloads for updating via Systemcore:
+
+- [A301 v2027.0.0-prerelease.12](https://github.com/REVrobotics/REV-Software-Binaries/releases/download/a301-27.0.0-prerelease.12/a301_27_0_0_prerelease_12.dfu)
+
+- [A301 v2027.0.0-prerelease.11](https://github.com/REVrobotics/REV-Software-Binaries/releases/download/a301-27.0.0-prerelease.11/a301_27_0_0_prerelease_11.dfu)
+
+<details>
+<summary>Changelog</summary>
+
+#### 2027.0.0-prerelease.12
+
+- Fixes status periods
+- Improves voltage control
+- Replaces output current on status0 with improved average motor current
+- Improves applied output reporting
+
+#### 2027.0.0-prerelease.11
+
+Initial release for A301
+
+</details>
+
+### Misc
 
 Other than A301, there are currently no new device versions for 2027. Please use the latest 2026 releases of firmware for your devices.
 
