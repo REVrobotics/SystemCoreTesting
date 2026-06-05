@@ -38,10 +38,21 @@ Refer to [WPILib Docs](https://docs.wpilib.org/en/stable/docs/software/vscode-ov
 
 [RHC2 for Desktop](https://alpha.rhc2.revrobotics.com/download-site/download.html)
 
-[RHC2 IPK for Systemcore](https://alpha.rhc2.revrobotics.com/download-site/debian/rev-robotics-rev-hardware-client-alpha_1.1.0_arm64.ipk) - Install this by clicking "Add Package" on the home screen of Systemcore and selecting this file. It will take a minute or so to start up.
+[RHC2 IPK for Systemcore](https://alpha.rhc2.revrobotics.com/download-site/debian/rev-robotics-rev-hardware-client-alpha_1.1.1_arm64.ipk) - Install this by clicking "Add Package" on the home screen of Systemcore and selecting this file. It will take a minute or so to start up.
 
 <details>
 <summary>Changelog</summary>
+
+## RHC2 1.1.1
+
+- Adds missing applied output signal for A301
+- Adds indicator to navigation bar to show whether you are in read-only mode
+- Improves startup time
+- Improves CPU and memory utilization during runtime
+- Improves leader/reader behavior
+- Improves download page
+- Improves update progress status display
+- Fixes update progress status when updating multiple devices across separate buses
 
 ### RHC2 1.1.0
 
@@ -64,12 +75,19 @@ To get the latest version of A301 firmware in RHC2, add the code `a301-alpha` in
 
 Direct firmware downloads for updating via Systemcore:
 
+- [A301 v2027.0.0-prerelease.14](https://github.com/REVrobotics/REV-Software-Binaries/releases/download/a301-27.0.0-prerelease.14/a301_27_0_0_prerelease_14.dfu)
+
 - [A301 v2027.0.0-prerelease.12](https://github.com/REVrobotics/REV-Software-Binaries/releases/download/a301-27.0.0-prerelease.12/a301_27_0_0_prerelease_12.dfu)
 
 - [A301 v2027.0.0-prerelease.11](https://github.com/REVrobotics/REV-Software-Binaries/releases/download/a301-27.0.0-prerelease.11/a301_27_0_0_prerelease_11.dfu)
 
 <details>
 <summary>Changelog</summary>
+
+#### 2027.0.0-prerelease.14
+
+- Fixes sensor faults not detected in voltage modes
+- Fixes false failed gearbox detection
 
 #### 2027.0.0-prerelease.12
 
