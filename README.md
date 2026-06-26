@@ -66,7 +66,7 @@ Note that all updated documentation for 2027 WPILib changes, new features, etc. 
 | ReduxLib | 2027.0.0-alpha-2 | :x: |
 | PathPlannerLib | 2027.0.0-alpha-2 | :x: |
 | ChoreoLib | 2027.0.0-alpha-1 | :x: |
-| AdvantageKit | v27.0.0-alpha-3 | :x: |
+| AdvantageKit | v27.0.0-alpha-3 | v27.0.0-alpha-4 |
 
 - :x: — No compatible release currently available for this WPILib version.
 

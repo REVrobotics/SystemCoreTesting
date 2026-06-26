@@ -3,25 +3,37 @@
 > [!IMPORTANT]  
 > **Please see the [known issues](#known-issues) section before installing or using AdvantageKit.**
 
-To install the 2027 alpha of AdvantageKit, choose "WPILib: Manage Vendor Libraries" > "Install new libraries (online)" from the command palette in VSCode and paste the URL below. **Note that no template projects are currently available for 2027 releases.**
+To install the 2027 alpha of AdvantageKit, follow the instructions in the WPILib documentation for [installing vendor libraries](https://docs.wpilib.org/en/latest/docs/software/vscode-overview/3rd-party-libraries.html#installing-libraries) and choose "AdvantageKit" from the list. Altneratively, choose "WPILib: Manage Vendor Libraries" > "Install new libraries (online)" from the command palette in VSCode and paste the URL below. **Note that only the skeleton template project is currently available for 2027 releases.**
 
 ```
-https://github.com/Mechanical-Advantage/AdvantageKit/releases/download/v27.0.0-alpha-3/AdvantageKit.json
+https://github.com/Mechanical-Advantage/AdvantageKit/releases/download/v27.0.0-alpha-4/AdvantageKit.json
 ```
 
 Zip files for offline installation are attached to each GitHub release (linked below).
 
 ## Changelog
 
+### [v27.0.0-alpha-4](https://github.com/Mechanical-Advantage/AdvantageKit/releases/tag/v27.0.0-alpha-4)
+
+- **Compatibility: WPILib 2027.0.0-alpha-6, Systemcore alpha/beta 11**
+- Added support for WPILib Alpha 6 ([#271](https://github.com/Mechanical-Advantage/AdvantageKit/pull/271), @blaze-developer and @jwbonner)
+- Updated to Java 25
+- Added skeleton project download
+- Added support for updated Driver Station data, including OpModes and joysticks
+- Updated SystemStats logging for the latest Systemcore release
+- Removed all support for mutable units
+- Added unit metadata to built-in match time logging
+- Applied all changes from [v26.0.0-beta-1](https://github.com/Mechanical-Advantage/AdvantageKit/releases/tag/v26.0.0-beta-1), [v26.0.0](https://github.com/Mechanical-Advantage/AdvantageKit/releases/tag/v26.0.0), [v26.0.1](https://github.com/Mechanical-Advantage/AdvantageKit/releases/tag/v26.0.1), and [v26.0.2](https://github.com/Mechanical-Advantage/AdvantageKit/releases/tag/v26.0.2)
+
 ### [v27.0.0-alpha-3](https://github.com/Mechanical-Advantage/AdvantageKit/releases/tag/v27.0.0-alpha-3)
 
-- **Compatibility: WPILib 2027.0.0-alpha-2, SystemCore release 163 & 166**
+- **Compatibility: WPILib 2027.0.0-alpha-2, Systemcore release 163 & 166**
 - Added support for WPILib Alpha 2
 - Removed 2025 deprecated features (`Logger.getRealTimestamp` and duplicate `LoggedDashboard` classes)
 
 ### [v27.0.0-alpha-2](https://github.com/Mechanical-Advantage/AdvantageKit/releases/tag/v27.0.0-alpha-2)
 
-- **Compatibility: WPILib 2027.0.0-alpha-1, SystemCore release 161 & 162**
+- **Compatibility: WPILib 2027.0.0-alpha-1, Systemcore release 161 & 162**
 - Added logging for landscape and portrait IMU orientations
 - Added logging for wall clock validity and wait to rename logs until updated
 - Added logging for CAN bus metadata (max bandwidth, FD state, availability, etc)
@@ -30,10 +42,10 @@ Zip files for offline installation are attached to each GitHub release (linked b
 
 ### [v27.0.0-alpha-1](https://github.com/Mechanical-Advantage/AdvantageKit/releases/tag/v27.0.0-alpha-1)
 
-- **Compatibility: WPILib 2027.0.0-alpha-1, SystemCore release 157**
-- Updated battery, epoch time, team number, and watchdog logging for SystemCore compatibility
-- Added support for VH-109 radio logging on SystemCore (requires team number to be configured)
-- Added support for console logging from the robot program on SystemCore
+- **Compatibility: WPILib 2027.0.0-alpha-1, Systemcore release 157**
+- Updated battery, epoch time, team number, and watchdog logging for Systemcore compatibility
+- Added support for VH-109 radio logging on Systemcore (requires team number to be configured)
+- Added support for console logging from the robot program on Systemcore
 - Added resource logging for CPU usage and temperature, memory usage, and storage usage
 - Added network stats logging for CAN, Ethernet, Wi-Fi, and USB tethering
 - Added system stats logging for IMU data
@@ -41,34 +53,44 @@ Zip files for offline installation are attached to each GitHub release (linked b
 
 ## Known Issues
 
-### Joystick visualization with POVs is inaccurate in AdvantageScope
+### Alert logging is not supported
 
-AdvantageKit records joystick POV values using a new format to align with the OS and WPILib, which causes the visualization in AdvantageScope to display inaccurate data. See [here](AdvantageScope.md#joystick-visualization-with-povs-is-inaccurate) for details.
+Alerts are not supported by WPILib Alpha 6, so AdvantageKit alert logging is temporarily disabled. This will be fixed in a future release.
+
+### OpModeRobot is not supported
+
+Users can continue to use `LoggedRobot`, which is the equivalent of WPILib's `TimedRobot` class. An equivalent for WPILib's `OpModeRobot` will be available in a future release.
 
 ### Console logging may be delayed by ~250ms
 
 Console data captured by AdvantageKit may be delayed by up to ~250ms from when it was generated by the robot program. This is a side effect of the console capture pipeline through the OS and will be fixed in a future release.
 
-### Timestamps in filenames use UTC
+### ~~Joystick visualization with POVs is inaccurate in AdvantageScope~~
 
-_Fixed by [SystemCore release 163](https://github.com/LimelightVision/systemcore-os-public?tab=readme-ov-file#alpha-4-release-163)_
+_Fixed by AdvantageScope [v27.0.0-alpha-5](AdvantageScope.md#v2700-alpha-5)_
 
-~~Autogenerated filenames for log files represent timestamps in UTC instead of the correct local time. See [this issue](https://github.com/wpilibsuite/SystemCoreTesting/issues/102) for details.~~
+~~AdvantageKit records joystick POV values using a new format to align with the OS and WPILib, which causes the visualization in AdvantageScope to display inaccurate data. See [here](AdvantageScope.md#joystick-visualization-with-povs-is-inaccurate) for details.~~
 
-### Log filenames do not include the date and time
+### ~~Timestamps in filenames use UTC~~
 
-_Fixed by [SystemCore release 161](https://github.com/LimelightVision/systemcore-os-public#alpha-3-7125-release-161)_
+_Fixed by [Systemcore release 163](https://github.com/LimelightVision/systemcore-os-public?tab=readme-ov-file#alpha-4-release-163)_
 
-~~Time synchronization from the Driver Station is not currently implemented on SystemCore, so the robot program has no knowledge of the current date and time. Log filenames therefore use a randomized identifier rather than the date and time that the log was produced. When running on the field, the event name and match number will still be included.~~
+~~Autogenerated filenames for log files represent timestamps in UTC instead of the correct local time. See [this issue](https://github.com/wpilibsuite/SystemcoreTesting/issues/102) for details.~~
 
-### Log files are very zoomed out in AdvantageScope
+### ~~Log filenames do not include the date and time~~
+
+_Fixed by [Systemcore release 161](https://github.com/LimelightVision/systemcore-os-public#alpha-3-7125-release-161)_
+
+~~Time synchronization from the Driver Station is not currently implemented on Systemcore, so the robot program has no knowledge of the current date and time. Log filenames therefore use a randomized identifier rather than the date and time that the log was produced. When running on the field, the event name and match number will still be included.~~
+
+### ~~Log files are very zoomed out in AdvantageScope~~
 
 _Fixed by AdvantageScope [v27.0.0-alpha-2](AdvantageScope.md#v2700-alpha-2)_
 
-~~WPILib (and AdvantageKit by extension) currently use [epoch timestamps](https://en.wikipedia.org/wiki/Unix_time) on SystemCore, which are not properly handled by AdvantageScope. See [here](AdvantageScope.md#log-files-are-very-zoomed-out-by-default) for details.~~
+~~WPILib (and AdvantageKit by extension) currently use [epoch timestamps](https://en.wikipedia.org/wiki/Unix_time) on Systemcore, which are not properly handled by AdvantageScope. See [here](AdvantageScope.md#log-files-are-very-zoomed-out-by-default) for details.~~
 
 ### USB drives do not mount consistently
 
-_Fixed by [SystemCore release 159](https://github.com/LimelightVision/systemcore-os-public#alpha-2-62825-release-159)_
+_Fixed by [Systemcore release 159](https://github.com/LimelightVision/systemcore-os-public#alpha-2-62825-release-159)_
 
-~~When logging data to a USB drive (the default option for `WPILOGWriter`), note that USB mounting on SystemCore is currently unreliable. Users can also choose to log to the internal storage by specifying the path `/home/systemcore/logs`. See https://github.com/wpilibsuite/SystemCoreTesting/issues/31 for details.~~
+~~When logging data to a USB drive (the default option for `WPILOGWriter`), note that USB mounting on Systemcore is currently unreliable. Users can also choose to log to the internal storage by specifying the path `/home/systemcore/logs`. See https://github.com/wpilibsuite/SystemcoreTesting/issues/31 for details.~~
