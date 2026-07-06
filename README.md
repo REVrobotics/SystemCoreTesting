@@ -32,7 +32,7 @@ Systemcore units originally shipped to teams during the initial FRC Alpha test a
 - [2027 Alpha 6 WPILib Installer](https://github.com/wpilibsuite/allwpilib/releases/tag/v2027.0.0-alpha-6)
 - [2027 Driver Station](https://github.com/wpilibsuite/FirstDriverStation-Public)
 - [OS Releases, Toolchain, Package Examples, Cross-Compilation Examples](https://github.com/LimelightVision/systemcore-os-public)
-- Limelight Hardware Manager 2.0.7 - [Windows](https://downloads.limelightvision.io/software/LimelightHardwareManagerSetup2_0_7.exe) | [macOS (Apple Silicon)](https://downloads.limelightvision.io/software/LimelightHardwareManager-macOS-AppleSilicon2_0_7.dmg) | [macOS (Intel)](https://downloads.limelightvision.io/software/LimelightHardwareManager-macOS-Intel2_0_7.dmg)
+- Limelight Hardware Manager 2.0.10 - [Windows](https://downloads.limelightvision.io/software/LimelightHardwareManagerSetup2_0_10.exe) | [macOS (Apple Silicon)](https://downloads.limelightvision.io/software/LimelightHardwareManager-macOS-AppleSilicon2_0_10.dmg) | [macOS (Intel)](https://downloads.limelightvision.io/software/LimelightHardwareManager-macOS-Intel2_0_10.dmg)
 
 > [!TIP]
 > The year and version on the desktop icons and WPILib folder might not match the WPILib version from the installer. As of this writing, the latest WPILib is 2027.0.0-alpha-6, which installs to a 2027_alpha5 folder and shortcuts. The reason for this is complicated, but it is intended behavior. Alpha 6 will install straight over an Alpha 5 installation. In season, this will not be an issue, as the folder will just be the year by itself, this is purely an Alpha and Beta issue.
