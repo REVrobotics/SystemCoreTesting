@@ -203,8 +203,10 @@ Check the "Mating Connector" Section of the [Systemcore Specification PDF](https
 ### Transitioning from roboRIO
 #### I2C
 
-The I2C pinout does not match that of the roboRIO. Cables such as https://www.revrobotics.com/rev-11-1729/?searchid=4554778&search_query=4+wire+i2c will need to be modified - SCL and SDA will need to be swapped. The Systemcore pinout matches the Qwiic / ControlHub pinout.
+The I2C pinout does not match that of the roboRIO. Cables such as https://www.revrobotics.com/rev-11-1729/?searchid=4554778&search_query=4+wire+i2c will need to be modified - SCL and SDA will need to be swapped. The Systemcore pinout matches the Qwiic and Control/Expansion Hub pinout.
 
 #### IO
 
-The IO signal pins have a 4.7K pulldown resistor. Limit switches will need to short the SIGNAL pin to the +3.3V pin on Systemcore.
+On Alpha units, the IO signal pins have a 4.7K pulldown resistor. Limit switches will need to short the SIGNAL pin to the +3.3V pin on Systemcore.
+
+On Beta units, the IO signal pins have a pull-up configuration, matching the roboRIO and Control/Expansion Hub.
