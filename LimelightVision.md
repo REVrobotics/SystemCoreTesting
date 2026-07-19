@@ -25,6 +25,10 @@ Breaking changes TLDR:
 ```java
 double turnKp = -0.02;
 Limelight camera = new Limelight();
+//Limelight camera = new Limelight("limelight");
+//Limelight camera = new Limelight(Limelight.SYSTEMCORE_USB0);
+//Limelight camera = new Limelight(Limelight.SYSTEMCORE_USB1);
+
 
 // Each loop
 double turn = joystick.getRightX();
@@ -225,28 +229,27 @@ The web UI now includes a search bar within the live JSON results view.
 2027.0 runs on Systemcore image 12 and supports USB cameras. 18 cameras have been manually curated and benefit from hardcoded workarounds for various USB firmware issues. Non-curated cameras will still function and auto-populate controls. All curated cameras expose one or two video modes selected for utility on FIRST robots. Non-curated cameras will expose exactly one video mode that is automatically selected. By default, USB cameras are configured for auto exposure and auto white balance.
 
 Global-shutter Vision Cameras
-1. Arducam OV9281 USB
-2. Arducam OV9782 / goBILDA Global Shutter
-3. Arducam OV2311 USB
-4. Innomaker OV9281 USB
-5. Waveshare OV9281 USB - not recommended due to poor optics, warning displayed in UI
-6. ThriftyBot ThriftyCam
-7. ThriftyBot ThriftiestCam (supported in the next update)
+* Arducam OV9281 USB
+* Arducam OV9782 / goBILDA Global Shutter
+* Arducam OV2311 USB
+* Innomaker OV9281 USB
+* Waveshare OV9281 USB - not recommended due to poor optics, warning displayed in UI
+* Thrifty Cam and ThrifitestCam support coming soon
 
 Rolling Shutter Vision Cameras
-8. UC60 / goBILDA Rolling Shutter
+* UC60 / goBILDA Rolling Shutter
 
 Logitech webcams
-9. Logitech C270 (960p variant)
-10. Logi C270 (720p variant) — no manual exposure, not recommended, warning displayed in UI.
-11. Logitech C310
-12. Logitech C920 Family
-13. Logitech Brio 101
-14. Logitech Brio 100
-15. Logitech C922 Pro Stream
-16. Logitech 1080P Pro Stream
-17. Logitech C930
+* Logitech C270 (960p variant)
+* Logi C270 (720p variant) — no manual exposure, not recommended, warning displayed in UI.
+* Logitech C310
+* Logitech C920 Family
+* Logitech Brio 101
+* Logitech Brio 100
+* Logitech C922 Pro Stream
+* Logitech 1080P Pro Stream
+* Logitech C930
 
 Other
-18. Microsoft LifeCam HD-3000
-19. Sony PS3 Eyecam
+* Microsoft LifeCam HD-3000
+* Sony PS3 Eyecam
