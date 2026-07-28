@@ -11,7 +11,7 @@ REVLib should be available in the vendor dependencies of WPILib VS Code, but you
 https://software-metadata.revrobotics.com/REVLib-2027.json
 ```
 
-[Offline Install](https://github.com/REVrobotics/REV-Software-Binaries/releases/download/revlib-2027.0.0-alpha-4/REVLib-offline-v2027.0.0-alpha-4.zip)
+[Offline Install](https://github.com/REVrobotics/REV-Software-Binaries/releases/download/revlib-2027.0.0-alpha-6/REVLib-offline-v2027.0.0-alpha-6.zip)
 
 Refer to [WPILib Docs](https://docs.wpilib.org/en/stable/docs/software/vscode-overview/3rd-party-libraries.html) about installing 3rd party libraries.
 
@@ -20,6 +20,18 @@ Refer to [WPILib Docs](https://docs.wpilib.org/en/stable/docs/software/vscode-ov
 
 <details>
 <summary>Changelog</summary>
+
+### REVLib v2027.0.0-alpha-6
+
+- [A301] Java: Fixes setCurrent()
+
+### REVLib v2027.0.0-alpha-5
+
+- [REVLib] Java: Fixes crash in getPeriodicStatus8()
+- [A301] Adds IdleMode getter and setter
+- [A301] Fixes inconsistencies when inverted
+- [A301] Adds a busId-only constructor to C++
+- [A301/SPARK] Adds ability to modify the absolute position range about zero -- (-1.0, 0] to [0, 1.0)
 
 ### REVLib v2027.0.0-alpha-4
 
@@ -54,10 +66,28 @@ Refer to [WPILib Docs](https://docs.wpilib.org/en/stable/docs/software/vscode-ov
 
 [RHC2 for Desktop](https://alpha.rhc2.revrobotics.com/download-site/download.html)
 
-[RHC2 IPK for Systemcore](https://alpha.rhc2.revrobotics.com/download-site/debian/rev-robotics-rev-hardware-client-alpha_1.2.1_arm64.ipk) - Install this by clicking "Add Package" on the home screen of Systemcore and selecting this file. It will take a minute or so to start up.
+[RHC2 IPK for Systemcore](https://alpha.rhc2.revrobotics.com/download-site/debian/rev-robotics-rev-hardware-client-alpha_1.3.1_arm64.ipk) - Install this by clicking "Add Package" on the home screen of Systemcore and selecting this file. It will take a minute or so to start up.
 
 <details>
 <summary>Changelog</summary>
+
+## RHC2 1.3.1
+
+- Fixes crash on run tab with A301 on versions before prerelease 16
+
+## RHC2 1.3.0
+
+- Adds support for connecting to a remote RHC2 instance (like Systemcore) from a desktop client
+- Adds support for installing/updating a Systemcore's RHC2 from the desktop client
+- Adds ability for leader to release control and read only-clients to claim control
+- Adds a prompt for Windows users to install DFU drivers if none are found
+- Adds support for A301's absolute range offset parameter
+- Adds tooltip and animation for identify button
+- Improves robustness of leader/reader mechanism when clients disconnect
+- Updates robot program override to only be controlled by the leader
+- Fixes Systemcore serving a stale, cached UI after an update. You will need to empty cache and refresh the UI for this to take effect.
+- Fixes frontend crash when downloads database file gets corrupted, particularly on Systemcore
+- Fixes sorting of Motioncore buses in telemetry tab
 
 ## RHC2 1.2.1
 
